@@ -5,20 +5,24 @@ import java.util.Scanner;
 public class SonsDosAnimais {
 
     public static void main(String[] args) {
-        Map<String, String> sonsDosAnimais = new HashMap<>();
-        sonsDosAnimais.put("cachorro", "auau");
-        sonsDosAnimais.put("gato", "miau");
-        sonsDosAnimais.put("vaca", "muuu");
 
+        Map<String, String> hinosDosTimes = new HashMap<>();
+        
+
+        hinosDosTimes.put("São Paulo", "Salve o tricolor paulista...");
+        hinosDosTimes.put("Flamengo", "Uma vez Flamengo, sempre Flamengo...");
+        
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Digite o nome do animal: ");
-        String nomeAnimal = scanner.nextLine().toLowerCase();
-
-        if (sonsDosAnimais.containsKey(nomeAnimal)) {
-            String som = sonsDosAnimais.get(nomeAnimal);
-            System.out.println("O som do(a) " + nomeAnimal + " é: " + som);
+        System.out.print("Digite o nome do time: ");
+        String nomeDoTime = scanner.nextLine();
+        
+        String hino = hinosDosTimes.get(nomeDoTime);
+        
+        if (hino != null) {
+            System.out.println("Hino do time " + nomeDoTime + ":");
+            System.out.println(hino);
         } else {
-            System.out.println("Animal não cadastrado.");
+            System.out.println("Time não encontrado. Verifique o nome.");
         }
     }
 }
